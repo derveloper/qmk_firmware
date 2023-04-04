@@ -16,27 +16,6 @@
 
 #pragma once
 
-#include "config_common.h"
-
-/* USB Device descriptor parameter */
-#define VENDOR_ID 0x7431
-#define PRODUCT_ID 0x6262
-#define DEVICE_VER 0x0001
-#define MANUFACTURER tominabox1
-#define PRODUCT BigBoy
-
-/* key matrix size */
-#define DIRECT_PINS { \
-    { D0, B1, B0 }, \
-    { B7, B2, B3 } \
-}
-
-#define UNUSED_PINS
-
-#define ENCODERS_PAD_A { C6 }
-#define ENCODERS_PAD_B { B6 }
-#define ENCODER_RESOLUTION 2
-
 #define RGB_DI_PIN B5
 
 #ifdef RGB_DI_PIN

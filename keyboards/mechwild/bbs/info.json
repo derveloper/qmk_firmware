@@ -1,7 +1,20 @@
 {
-    "keyboard_name": "BBS",
+    "keyboard_name": "BB Steno",
+    "manufacturer": "MechWild",
     "maintainer": "kylemccreery",
     "url": "https://mechwild.com/product/bb-steno/",
+    "usb": {
+        "vid": "0x6D77",
+        "pid": "0x170E",
+        "device_version": "0.0.1"
+    },
+    "indicators": {
+        "caps_lock": "C13",
+        "on_state": 0
+    },
+    "processor": "STM32F401",
+    "bootloader": "stm32-dfu",
+    "board": "BLACKPILL_STM32_F401",
     "layouts": {
         "LAYOUT": {
             "layout": [

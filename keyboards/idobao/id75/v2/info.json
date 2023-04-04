@@ -1,7 +1,16 @@
 {
-    "keyboard_name": "ID75 v2",
+    "keyboard_name": "ID75",
+    "manufacturer": "IDOBAO",
     "url": "",
     "maintainer": "peepeetee",
+    "usb": {
+        "vid": "0x6964",
+        "pid": "0x0075",
+        "device_version": "0.0.2"
+    },
+    "processor": "atmega32u4",
+    "bootloader": "atmel-dfu",
+    "community_layouts": ["ortho_5x15"],
     "layouts": {
         "LAYOUT_ortho_5x15": {
             "layout": [

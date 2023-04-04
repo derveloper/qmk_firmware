@@ -28,7 +28,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[1] = LAYOUT(
         _______, KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  _______,
-        _______, RGB_TOG, _______, _______, _______, RESET,   _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        _______, RGB_TOG, _______, _______, _______, QK_BOOT,   _______, _______, _______, _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______,
                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
                  _______, _______,          _______, _______,                   RGB_MOD,          _______,          _______, _______, _______
@@ -53,15 +53,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 #ifdef ENCODER_ENABLE
-#define ENCODERS 1
-static uint8_t  encoder_state[ENCODERS] = {0};
-static keypos_t encoder_cw[ENCODERS] = {{6, 4}};
-static keypos_t encoder_ccw[ENCODERS] = {{7, 4}};
-
+static uint8_t  encoder_state[NUM_ENCODERS] = {0};
+static keypos_t encoder_cw[NUM_ENCODERS] = {{6, 4}};
+static keypos_t encoder_ccw[NUM_ENCODERS] = {{7, 4}};
 
 void encoder_action_unregister(void) {
-#ifdef ENCODERS
-    for (uint8_t index = 0; index < ENCODERS; ++index) {
+    for (uint8_t index = 0; index < NUM_ENCODERS; ++index) {
         if (encoder_state[index]) {
             keyevent_t encoder_event = (keyevent_t) {
                 .key = encoder_state[index] >> 1 ? encoder_cw[index] : encoder_ccw[index],
@@ -72,7 +69,6 @@ void encoder_action_unregister(void) {
             action_exec(encoder_event);
         }
     }
-#endif
 }
 
 void encoder_action_register(uint8_t index, bool clockwise) {

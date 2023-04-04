@@ -1,7 +1,15 @@
 {
     "keyboard_name": "Conde60", 
+    "manufacturer": "DeskDaily",
     "url": "", 
     "maintainer": "DeskDaily", 
+    "usb": {
+    	"vid": "0xD812",
+    	"pid": "0x0015",
+    	"device_version": "0.0.1"
+    },
+    "processor": "atmega32u4",
+    "bootloader": "atmel-dfu",
     "layouts": {
         "LAYOUT": {
             "layout": [
